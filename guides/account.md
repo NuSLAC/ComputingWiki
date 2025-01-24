@@ -1,43 +1,38 @@
-## Two accounts
+## Three accounts (ugh!)
 
-There are two types: **SLUO** and **computing** accounts. 
+There are three types of accounts: 
+* **Scientific User (USER)** account
+  * needed for all SLAC employees and users. You need this before applying for a computing account.
+* **Computing (Unix/Windows)** account
+  * for all practical things including use of computing resources. You need this before applying for a S3DF account.
+* **S3DF** account
+  * for accessing S3DF computing facility, where you would do research computing.
 
-**SLUO** account is needed for all SLAC employees and users. You need this before applying for a computing account.
-
-**Computing (Unix/Windows)** account is for all practical things including use of computing resources. To apply for a computing account, you first need to obtain a SLUO account.
-
-## Requesting a SLUO account
-Go to [SLUO webpage](https://www-group.slac.stanford.edu/sluo/) and follow the hyperlink "SLUO User Information Form" to submit your request. Contact [Kazu](mailto:kterao@slac.stanford.edu) or your SLAC collaborator supporting the process and tell that you submitted a request.
-
-### Tips on filling the request form
-You can use your best guess on all questions asked in the account request form. Mistakes can be corrected later. Of course, avoiding a mistake will hopefully endup a smoother approval process. So here is some tips on filling the request form.
-
-**On the 1st page**, in case followings are unclear...
-*  For "Will you be using any SLAC computing resources", choose "Yes"
-*  For "Experiment you will be working on", you can choose "Deep Underground Neutrino Experiment"
-
-**Then on the 2nd page**...
-*  For "**SLAC Spokesperson/Sponsor/Supervisor** ...", "Kazuhiro Terao"
-*  The section "**NON US CITIZENS**", you don't have to enter anything unless you have US visa. No worries, though there's asterisk, it does not mean it is required. If you do have visa, fill all fields. If you don't, do not fill any field in this section. 
-*  For "**Starting Date**", please enter today's date
-*  For "**SLAC Deapartment**", please choose "EPP Neutrino"
-*  For "**Funding Source**", please choose "DOE"
-*  For "**How long will you**...", please choose "FIXED TERM", then set the starting date today to 1 year
-*  For "**What percent of time**...", please choose "<10%" unless you work at SLAC.
+## Requesting a USER account
+1. Go to [this page](https://vue.slac.stanford.edu/ufva). 
+2. Choose SCIENTIFIC USER
+3. Click on BEFORE YOU ARRIVE, expand the field and LAUNCH SCIENTIFIC USER FORM.
+4. Let them know who they should choose for the Point of Contact (POC, e.g. Kazuhiro Terao, Hirohisa Tanaka, Mark Convery)
 
 **After the submission**...
-*  You may be asked to submit a CV listing your education (from college onwards) and employment record. Please note this cannot have >=1 year gap in the record since the college graduation. This is not for a job application and your employement history and education records are all what matters :)
-* Contact [Kazu](mailto:kterao@slac.stanford.edu) or any SLAC contact who is supporting your application.
-
+* Contact your POC about the submission of your application.
 
 ## Requesting a computing account
-Once your SLUO account is approved, you should receive an email notifying that and your "system ID" which consists of 6 digits. Contact [Kazu](mailto:kterao@slac.stanford.edu) with following information:
+Once your USER account is approved, you should receive an email notifying that and your "system ID" which consists of 6 digits. Contact [Kazu](mailto:kterao@slac.stanford.edu) with following information:
   * Your system ID
   * Name of your home institution
   * **TWO** preferred unix user account name to be created for you, in the order of preference. Your account name may contain digits 0-9, lower-case letters a-z, and the special character "-". Must begin with a lower-case letter a-z. Must not be shorter than 3 or longer than 8 characters.
 
-## After getting an account
-* Make sure you complete the cyber security training, or your account will be disabled soon.
+Once your account is granted, make sure you complete the cyber security training.
+Otherwise your account will be disabled very soon.
+
+## S3DF computing account
+Once you have your Unix computing account:
+* Go to [this page](https://coact.slac.stanford.edu/)
+* Click "Login..." and enter your Unix account name and password.
+* With correct username and password, this process will generate a request to enable your computing account for S3DF. Notify [Kazu](mailto:kterao@slac.stanford.edu) so he will approve. He gets a notice automatically from your request so if you trust the process (what?), you don't have to nudge him.
+
+## Tips related to your computing account
 * Note useful links related to computing:
     * Set up CISCO DUO authentification. [Download DUO app](https://duo.com/product/multi-factor-authentication-mfa/duo-mobile-app) and [register your DUO](https://www-internal.slac.stanford.edu/twostep/enrollment) for use at slac. 
     * Use [SLAC IT Service desk](https://slacprod.servicenowservices.com/it_services/) to submit tickets and let the IT team know any tiny issue you experience.

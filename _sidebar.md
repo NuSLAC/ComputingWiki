@@ -1,6 +1,5 @@
 - SLAC Neutrino Group Computing
   - [Requesting a computing account at SLAC](guides/account.md)
-  - [Facilities: SDF and S3DF](guides/facilities.md)
   - [Getting started](guides/introduction.md)
   - [Software](guides/software.md)
   - [Computing resources](guides/resources.md)

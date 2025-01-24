@@ -1,4 +1,4 @@
-# Facilities: SDF and S3DF
+# SLAC Shared Scientific Data Facility (S3DF)
 
 At the time of writing this document (January 2023), you should know about two computing facilities at SLAC:
 1. SLAC Shared Scientific Data Facility (S3DF), coming online in 2023

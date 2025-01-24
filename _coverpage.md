@@ -6,5 +6,5 @@
 
 - What else is there to say?
 
-[GitHub](https://github.com/drinkingkazu/NuWiki)
+[GitHub](https://github.com/NuSLAC/ComputingWiki)
 [Wiki](#welcome-to-nu-wiki)

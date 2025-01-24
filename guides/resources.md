@@ -12,11 +12,8 @@ Here is a summary of the total dedicated resources.
 
 | Partition   | RAM total  | CPU total  | GPU - A100 | GPU - V100 | GPU - P100 | GPU - 2080Ti | GPU - 1080Ti |
 | :---        |   :----:   |   :----:   |   :----:   |   :----:   |   :----:   |    :----:    |    :----:    |
-| neutrino    | 4864GB | 664 | 16 | 10 | 0 | 10 | 5 |
+| neutrino    | 4864GB | 664 | 28 | 10 | 0 | 10 | 5 |
 | ml          | 9280GB | 1424| 28 | 0  | 0 | 110 | 0 |
 
-Some of these are on SDF, and some are on S3DF (although eventually all moved to S3DF). If you are looking for a particular type of resource and you cannot find how to access, [please let Kazu know](mailto:kterao@slac.stanford.edu).
-
-
-Getting a computing account (with a unix group `nu`) does not automatically give an access to `neutrino` and `ml` partitions. If you need access to those, please [contact Kazu](mailto:kterao@slac.stanford.edu).
+If you are looking for a particular type of resource and you cannot find how to access, [please let Kazu know](mailto:kterao@slac.stanford.edu).
 
