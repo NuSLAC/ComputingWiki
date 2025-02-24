@@ -24,7 +24,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
 
 ## AI/ML Projects
 
-- **_Four Project Stages_** ... We classify each project into 4 stages listed below:
+**_Four Project Stages_** ... We classify each project into 4 stages listed below:
 1. Exploration 
     1. The project is in an exploration stage for multiple potential directions and testing a proof of principle.
 2. Development
@@ -75,7 +75,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
 
 ### Surrogate for Nuclear Final State Interactions (FSI) ###
 - **_What is it_** ... In LArTPC, a neutrino comes and interacts with one of nucleons in an Argon nucleus. Then outcoming particles produced from the interaction must make it out from the nucleus in which about 40 nucleons are flying around with high (up to hundreds of MeV) momentum. In the process of exiting, they may interact again or multiple times, sometimes changing its types and producing more particles. This process, the part after neutrino-nuclear interaction and before all active particles to exit the nuclear shell, is referred to as a nuclear Final State Interaction (FSI). The current generation of experiments use a Monte Carlo simulation software called GiBUU which models many-particle system (i.e. Argon nucleus) by tracking particle interactions at discrete time steps. This simulation is slow and the bottleneck for producing high statistics samples. This project is to develop a surrogate model that predicts the time evolution of particle dynamics using AI/ML model. 
-- **_Current status_** ... This project is in its stage 2: it was carried out as a summer project in 2023 and the progress is halted despite interest and need for a fast surrogate model. During the summer project, a transformer-based model was developed and trained using GiBUU simulation. It takes the list of particles at each time step as input to an ecoder, then use decoder to predict an arbitrary number of particles in the next time step. THe results show reasonable agreement between the model's prediction and GiBUU output albeit more improvements are necessary to be used for high precision physics analysis. Another challenge in this approach is the limitation of model capability due to sample statistics. As GiBUU is slow, generation of high statistics training datasets is also limited.
+- **_Current status_** ... This project is in its **stage 2 (development)**: it was carried out as a summer project in 2023 and the progress is halted despite interest and need for a fast surrogate model. During the summer project, a transformer-based model was developed and trained using GiBUU simulation. It takes the list of particles at each time step as input to an ecoder, then use decoder to predict an arbitrary number of particles in the next time step. THe results show reasonable agreement between the model's prediction and GiBUU output albeit more improvements are necessary to be used for high precision physics analysis. Another challenge in this approach is the limitation of model capability due to sample statistics. As GiBUU is slow, generation of high statistics training datasets is also limited.
 - **_Potential projects_**
     - Improve the model accuracy in predicting a set of particles at each time step
     - Develop a higher statistics dataset
