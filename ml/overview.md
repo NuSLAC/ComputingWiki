@@ -3,13 +3,13 @@
 This page is a temporary write-up to summarize AI/ML projects in the SLAC neutrino group.
 They are listed below, followed by project descriptions that can be found after scrolling down in this page.
 
-- <a href="SPINE">Scalable Particle Imaging with Neural Embeding (SPINE)</a>
-- <a href="DiffSim">Differentiable TPC Simulation</a>
-- <a href="SIREN">Differentiable Optical Detector Surrogate</a>
-- <a href="FSI">Surrogate for Nuclear Final State Interactions (FSI)</a>
-- <a href="FM">Foundation Models for Particle Images</a>
-- <a href="LLM">LLMs for Particle Physics</a>
-- <a href="DataPortal">Neutrino Public Data Portal</a>
+- <a href="#SPINE">Scalable Particle Imaging with Neural Embeding (SPINE)</a>
+- <a href="#DiffSim">Differentiable TPC Simulation</a>
+- <a href="#SIREN">Differentiable Optical Detector Surrogate</a>
+- <a href="#FSI">Surrogate for Nuclear Final State Interactions (FSI)</a>
+- <a href="#FM">Foundation Models for Particle Images</a>
+- <a href="#LLM">LLMs for Particle Physics</a>
+- <a href="#DataPortal">Neutrino Public Data Portal</a>
 
 In the linked description for each project, the progress status is classified among four stages listed below:
 
@@ -123,7 +123,7 @@ Finally, refer to the <a href="Primers">Primers</a> section for some terminologi
     - A similar attempt made for a LLM (BERT) trained on physics papers ([PhysBERT](https://arxiv.org/abs/2408.09574))
     - [PDG annual review](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.030001) 
 
-<div id="DataPortal"></div>
+<div id="DataPortal91432"></div>
 ### Neutrino Public Data Portal ###
 - **_What is it_**
 - **_Current status_**
