@@ -1,6 +1,28 @@
 # ML Projects at Neutrino Group
 
 This page is a temporary write-up to summarize AI/ML projects in the SLAC neutrino group.
+They are listed below, followed by project descriptions that can be found after scrolling down in this page.
+
+- <a href="SPINE">Scalable Particle Imaging with Neural Embeding (SPINE)</a>
+- <a href="DiffSim">Differentiable TPC Simulation</a>
+- <a href="SIREN">Differentiable Optical Detector Surrogate</a>
+- <a href="FSI">Surrogate for Nuclear Final State Interactions (FSI)</a>
+- <a href="FM">Foundation Models for Particle Images</a>
+- <a href="LLM">LLMs for Particle Physics</a>
+- <a href="DataPortal">Neutrino Public Data Portal</a>
+
+In the linked description for each project, the progress status is classified among four stages listed below:
+
+1. Exploration 
+    1. The project is in an exploration stage for multiple potential directions and testing a proof of principle.
+2. Development
+    1. Idea is explored enough and considered feasible. At this stage, a modest to large software development is going on. 
+3. Implementation
+    1. At this stage, we are implementing an application in at least one experiment and demonstrating its impact. The goal of this stage is for the impact to be recognized and the tools to be adopted officially by an experiment.
+4. Production / Maintenance
+    1. Our focus moves onto supporting experiment-specific challenges, which likely still involves R&D, running our tools to process mass dataset, and maintaining the software and whole pipeline of data processing. 
+
+Finally, refer to the <a href="Primers">Primers</a> section for some terminologies and concepts introduced in a project description.
 
 ## Primers
 
@@ -22,19 +44,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
 - **_Foundation Models_** ... is a concept of introducing a powerful representation learning (see SSL above) as a pre-training for AI/ML models. As discussed within the context of SSL, a successful representation learning will result in a model capturing fundamental concepts of the world presented by the training dataset. Those so-called Foundation Models (FMs) can be used as a common foundation to develop multitudes of applications. Having one big capable model may have multiple advantages: 1) it may be more efficient than training completely separate, task-specific models; 2) because the base training is shared across tasks, we can expect coherence/correlation among outputs across tasks; 3) the model may perform better through knowledge developed to solve a wide scope of challenges compared to a model trained to solve one specific task through supervised learning. This approach is similar to our education system where kids are sent to a school education system to learn general knowledge in a spectrum of subject before they come out from a highschool or a college to specialize in a certain profession. Having a common knowledge group makes the process efficient and sometimes help advancing the subject with diverse knowledge input. Back to AI/ML applications, the idea of foundation models is to develop a capable base model that can be used for multiple downstream tasks.
 
 
-## AI/ML Projects
-
-**_Four Project Stages_** ... We classify each project into 4 stages listed below:
-1. Exploration 
-    1. The project is in an exploration stage for multiple potential directions and testing a proof of principle.
-2. Development
-    1. Idea is explored enough and considered feasible. At this stage, a modest to large software development is going on. 
-3. Implementation
-    1. At this stage, we are implementing an application in at least one experiment and demonstrating its impact. The goal of this stage is for the impact to be recognized and the tools to be adopted officially by an experiment.
-4. Production / Maintenance
-    1. Our focus moves onto supporting experiment-specific challenges, which likely still involves R&D, running our tools to process mass dataset, and maintaining the software and whole pipeline of data processing. 
-
-
+<div id="SPINE"></div>
 ### Scalable Particle Imaging with Neural Embeding (SPINE) ###
 - **_What is it?_** ... SPINE is a multi-task, composite deep learning algorithm developed for data reconstruction of Liquid Argon Time Projection Chamber (LArTPC) detectors. An input to SPINE is a 3D image of particle trajectories, and the output includes many high level physics observables inferred from the input. SPINE consists of multiple convolutional and graph neural networks. These networks are tasked for specific data reconstruction purposes. They are stacked in a way such that information flow and hierarchy of the reconstruction tasks follow our inductive bias. For instance, individual particles are identified before particle-specific reconstruction is performed. Information input to a particle-specific reconstruction only take input a subset of image pixels that corresponds to the target particle. 
 - **_Current status_** ... SPINE is in the **stage 4 (production and maintenance)**. Our core involvement is in DUNE near detector (DUNE ND, a 3D imaging pixelated LArTPC) and SBN (ICARUS and SBND, both with 2D imaging wire-based LArTPCs). The SBN is in more advanced stage as there is a larger momentum to push data analysis with already collected (and increasing) real data. For DUNE ND, data from smaller prototype detectors are analyzed for low-level detector physics. A pipeline is being built for simulated dataset. 
@@ -49,6 +59,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
     - Papers for [the whole chain](https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_149.pdf), [sparse CNN](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.012005), [endpoint detection](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.032004), [dense pixel clustering](https://arxiv.org/abs/2007.03083), [sparse fragment clustering](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.072004)
     - Recent presentation by [Francois Drielsma at NPML 2024](https://indico.phys.ethz.ch/event/113/contributions/880/attachments/504/1103/NPML%202024%20-%20SPINE.pdf)
 
+<div id="DiffSim"></div>
 ### Differentiable TPC Simulation ###
 - **_What is it?_** ... This project implements a LArTPC detector simulation within an AD-enabled AI/ML framework. This enables gradient-based optimization to automate the optimization of detector physics model parameters, which is referred to as "detector calibration" in experiments. Traditionally, detector calibration requires a separate analysis software even though it shares the same physics models with detector simulation. This requirement is due to imcapability of a traditional simulator to solve the inverse problems while a differentiable simulator can. Moreover, while a traditional calibration approach assumes weak to no correlation among mutliple detector physics models, a differentiable TPC simulator can remove such assumption and perform a multi-target optimization. Furthermore, a differentiable simulator enables gradient calculation with respect to the input data, allowing us to develop many applications beyond calibration such as the reconstruction of an input.
 - **_Current status_** ... This project is just entering the **Stage 3 (implementation)**. A differentiable TPC detector simulation has been developed, and an experiment-specific optimization routine is being implemented. In parallel, a significant overhaul is also being performed in an attempt of improving the software's computational efficiency by a few orders of magnitude so that it is scalable. Potential projects in 2025 include demonstration of optimizing the detector physics model parameters from prototype detector data. This may also include detector physics analysis. Another project is the core software development to include missing features for the overhauled software. This would give the first-hand experience in gradient-based optimization techniques and GPU-based massively parallel computing methods. 
@@ -61,6 +72,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
     - Paper for [the DUNE ND TPC simulator](https://arxiv.org/abs/2309.04639)
     - Recent presentation by [Yifan Chen at MODE 2024](https://indico.cern.ch/event/1380163/contributions/6138273/attachments/2932927/5150882/Mode_Valencia_YifanChen_2024_09_23_diffsim.pdf)
 
+<div id="SIREN"></div>
 ### Differentiable Optical Detector Surrogate ###
 - **_What is it?_** ... In LArTPC, photons are produced in abandonce (about 20,000 photons/MeV energy deposition, many millions to a billion photons produced per neutrino interaction). While optical photon propagation is fairly well understood, the sheer number of photons make computation intractable. This is a situation well suited to deploy a surrogate model, and we have developed a differentiable surrogate model for simulating response of optical detectors in a LArTPC. Our approach utilize a neural network architecture called SIREN, a special class of neural network designed to model a continuous (i.e. "smooth" in mathematical terms) function.  In general, neural networks are differentiable and can be a universal function approximator. We train a neural network to mimic a behavior of unknown, inaccessible function we wisdh to acquire. While neural nets can be trained to resemble the behavior of such function, it does not guarantee that its gradient also follows closely that of the target function. SIREN is designed to address exactly this weakness employing a design that can accurately represent the target model gradient. Furthermore, we developed a technique to optimize SIREN directly on real calibration data. This removes dependency on simulation and thus makes the model free of concerns related to data-shifts.
 - **_Current status_** ... This effort is toward the end of **stage 3 (implementation)**. We have demonstrated the model can supersede the present techniques used to model optical physics response in ICARUS and DUNE ND. For the most LArTPCs, demonstration is performed using simulated datasets. Demonstration with real data is currently on-going using ICARUS LArTPC dataset along with experiment-specific implementation work.  The demonstration work to date focus on modeling how much optical signal is detected by the detectors, and completely omits the dynamic element, the signal distribution over time. Modeling of signal time distribution is also in the stage 3, but demonstration requires a lot more coding.
@@ -73,6 +85,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
     - Paper for [ICARUS optical detectors](https://arxiv.org/abs/2211.01505)
     - Recent presentation by [Patrick (Ka Vang) Tsang at NPML 2024](https://indico.phys.ethz.ch/event/113/contributions/867/attachments/524/1120/2024-06-28%20NPML.pdf)
 
+<div id="FSI"></div>
 ### Surrogate for Nuclear Final State Interactions (FSI) ###
 - **_What is it_** ... In LArTPC, a neutrino comes and interacts with one of nucleons in an Argon nucleus. Then outcoming particles produced from the interaction must make it out from the nucleus in which about 40 nucleons are flying around with high (up to hundreds of MeV) momentum. In the process of exiting, they may interact again or multiple times, sometimes changing its types and producing more particles. This process, the part after neutrino-nuclear interaction and before all active particles to exit the nuclear shell, is referred to as a nuclear Final State Interaction (FSI). The current generation of experiments use a Monte Carlo simulation software called GiBUU which models many-particle system (i.e. Argon nucleus) by tracking particle interactions at discrete time steps. This simulation is slow and the bottleneck for producing high statistics samples. This project is to develop a surrogate model that predicts the time evolution of particle dynamics using AI/ML model. 
 - **_Current status_** ... This project is in its **stage 2 (development)**: it was carried out as a summer project in 2023 and the progress is halted despite interest and need for a fast surrogate model. During the summer project, a transformer-based model was developed and trained using GiBUU simulation. It takes the list of particles at each time step as input to an ecoder, then use decoder to predict an arbitrary number of particles in the next time step. THe results show reasonable agreement between the model's prediction and GiBUU output albeit more improvements are necessary to be used for high precision physics analysis. Another challenge in this approach is the limitation of model capability due to sample statistics. As GiBUU is slow, generation of high statistics training datasets is also limited.
@@ -84,7 +97,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
     - The SLAC team involved: **Patrick Tsang** (lead), Kazu Terao, Hiro Tanaka
     - [Summer project presentation](https://drive.google.com/file/d/1FvE04TLrrERpfX0BdZvcp4w2JdpdANHk/view?usp=sharing) by Angel Jia 
 
-
+<div id="FM"></div>
 ### Foundation Models for Particle Images ###
 - **_What is it_** ... The project is to a development of successful SSL methods and thus foundation models (FMs) that can be applied for a spectrum of LArTPC physics analysis. Concretely, our goals are two-folds: 1) develop a successful SSL method on real data to minimize or eliminate the data shift; 2) train a FM that serves as a common base for all data reconstruction tasks. For the latter, our current target is to outperform the state of the art, the SPINE data reconstruction developed by our group. SPINE has been our attempt to integrate inductive bias in a composite of deep learning models through its architectural design. While it is powerful, there is a technical limitation in explicitly incorporating all of our knowledge. As a result, SPINE can fall behind human analyzers in some instances. FMs can potentially develop an internal knowledge structure equivalent to a far more intricate algorithm than SPINE, and produce more representative features that can be used by a spectrum of downstream data reconstruction tasks to outperform SPINE. 
 - **_Current status_** ... We are working on our first goal (1 above) and the status is at the **stage 1 (exploration)**. Our current focus is to try and compare multiple SSL techniques developed for image data in the area of Computer Vision. They can be classified in three venues and two data represnetations. Three venues include mask-based, contrastive, and self-distillation approaches. For each of them, input data can be either sparse (i.e. point cloud, graph representations) or dense images. Each combination is expected to yield difference in the quality of learned representations. We see promising results in the mask-based approach with 3D sparse image input. Other combinations are to be explored. 
@@ -98,6 +111,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
     - [First paper by Sam](https://arxiv.org/html/2502.02558v1)
     - [Foundation Models](https://arxiv.org/abs/2108.07258) introduction by Stanford CRFM
 
+<div id="LLM"></div>
 ### LLMs for Particle Physics ###
 - **_What is it_** ... Large Language Models (LLMs) have been widely adapted in our everyday life. Yet, the use in our research work remains sparse and at the individual's use cases. The goal of this project is to incorporate LLMs into our work pipeline and boost our research productivity. We have identified two potential applications: 1) LLMs as AI agent for detector operations and monitoring; 2) LLMs for Particle Data Group. For both projects, LLMs will be operated within the context of Retrieval-Augumentd Generation (RAG), which can be considered as an internal loop structure for hypothesis generation and testing, which can improve the quality of the model response. For 1), the simplest form of a task is to answer a question from a detector operator by referring to the electrical logbook that records all past incidents and findings. In the current experiments, an operator has to perform a manual search of keywords to look for information in a large logbook database. LLMs can automate this process. For 2), our approach is to fine-tune a LLM with the annual review of particle physics, a document about 2,000 pages long summarizing the latest knowledge of the field. Such a model can be available for 24/7 to answer questions and navigate researchers to the location of information source within the review. It can also make an impact for outreach purposes as an interactive AI agent. Often times, especially in an experimental research, lerning is most efficiently done through an interactive communication, many exchanges of questions and answers. However, it is often expensive to have such interactive conversation with experts. A tireless AI agent can address such challenges.
 - **_Current status_** ... Our current focus is on 2) collaborating with the Institute of Computational and Mathematical Engineering (ICME) at Stanford. The current status is in **stage 1 (exploration)**. We have a simple LLM+RAG system with a graphical user-interface through which one can interact with an AI agent. The LLMs can be fine-tuned with the PDG annual review manuscript or any manuscript in a PDF format.
@@ -109,7 +123,7 @@ This page is a temporary write-up to summarize AI/ML projects in the SLAC neutri
     - A similar attempt made for a LLM (BERT) trained on physics papers ([PhysBERT](https://arxiv.org/abs/2408.09574))
     - [PDG annual review](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.030001) 
 
-
+<div id="DataPortal"></div>
 ### Neutrino Public Data Portal ###
 - **_What is it_**
 - **_Current status_**
