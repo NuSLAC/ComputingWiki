@@ -3,13 +3,13 @@
 This page is a temporary write-up to summarize AI/ML projects in the SLAC neutrino group.
 They are listed below, followed by project descriptions that can be found after scrolling down in this page.
 
-- <a href="https://nuslac.github.io/ComputingWiki/#/ml/overview?id=SPINE">Scalable Particle Imaging with Neural Embeding (SPINE)</a>
-- <a href="https://nuslac.github.io/ComputingWiki/#/ml/overview?id=DiffSim">Differentiable TPC Simulation</a>
-- <a href="https://nuslac.github.io/ComputingWiki/#/ml/overview?id=SIREN">Differentiable Optical Detector Surrogate</a>
-- <a href="https://nuslac.github.io/ComputingWiki/#/ml/overview?id=FSI">Surrogate for Nuclear Final State Interactions (FSI)</a>
-- <a href="https://nuslac.github.io/ComputingWiki/#/ml/overview?id=FM">Foundation Models for Particle Images</a>
-- <a href="https://nuslac.github.io/ComputingWiki/#/ml/overview?id=LLM">LLMs for Particle Physics</a>
-- <a href="https://nuslac.github.io/ComputingWiki/#/ml/overview?id=DataPortal">Neutrino Public Data Portal</a>
+- [Scalable Particle Imaging with Neural Embeding (SPINE)](https://nuslac.github.io/ComputingWiki/#/ml/overview?id=SPINE) 
+- [Differentiable TPC Simulation](https://nuslac.github.io/ComputingWiki/#/ml/overview?id=DiffSim) 
+- [Differentiable Optical Detector Surrogate](https://nuslac.github.io/ComputingWiki/#/ml/overview?id=SIREN) 
+- [Surrogate for Nuclear Final State Interactions (FSI)](https://nuslac.github.io/ComputingWiki/#/ml/overview?id=FSI) 
+- [Foundation Models for Particle Images](https://nuslac.github.io/ComputingWiki/#/ml/overview?id=FM) 
+- [LLMs for Particle Physics](https://nuslac.github.io/ComputingWiki/#/ml/overview?id=LLM) 
+- [Neutrino Public Data Portal](https://nuslac.github.io/ComputingWiki/#/ml/overview?id=DataPortal) 
 
 In the linked description for each project, the progress status is classified among four stages listed below:
 
