@@ -11,6 +11,10 @@
   - [OnDemand Jupyter](tools/ondemand.md)
   - [Editing code on SDF](tools/sshfs.md)
 
+
+- ML Research Projects
+  - [Overview](ml/overview.md)
+
 - LArTPC experiments
   - ICARUS
     - [Making samples for `lartpc_mlreco3d`](icarus/sample.md)
